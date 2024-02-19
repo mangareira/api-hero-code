@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:alpine
+    container_name: agenda_container
+    ports:
+      - "5437:5432"
+    environment:
+      POSTGRES_DB: agenda_database
+      POSTGRES_USER: agenda_user
+      POSTGRES_PASSWORD: agenda_password
+    volumes:
+      - ./banco-de-dados-evento-api:/var/lib/postgresql/data
